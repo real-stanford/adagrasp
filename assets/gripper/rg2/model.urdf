@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- =================================================================================== -->
+<!-- |    Author: Beichun Qi                                                           | -->
+<!-- =================================================================================== -->
+<robot name="rg2">
+  <link name="palm">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="meshes/palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="meshes/palm.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <joint name="palm_left_inner_joint" type="revolute">
+    <origin rpy="0 -0.43 0" xyz="-0.0075 0.0 0.0715"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="0" upper="0.86" velocity="0.2"/>
+    <parent link="palm"/>
+    <child link="left_inner"/>
+  </joint>
+  <link name="left_inner">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0075 0.0 -0.0715"/>
+      <geometry>
+        <mesh filename="meshes/left_inner.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0075 0.0 -0.0715"/>
+      <geometry>
+        <mesh filename="meshes/left_inner.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+  
+  <joint name="palm_left_outer_joint" type="revolute">
+    <origin rpy="0 -0.43 0" xyz="-0.017 0.0 0.055"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="0" upper="0.86" velocity="0.2"/>
+    <parent link="palm"/>
+    <child link="left_outer"/>
+  </joint>
+  <link name="left_outer">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.017 0.0 -0.055"/>
+      <geometry>
+        <mesh filename="meshes/left_outer.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.017 0.0 -0.055"/>
+      <geometry>
+        <mesh filename="meshes/left_outer.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <joint name="left_finger_joint" type="revolute">
+    <origin rpy="0 0.43 0" xyz="-0.025592 0.0 0.048677"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="-0.86" upper="0" velocity="0.2"/>
+    <parent link="left_outer"/>
+    <child link="left_finger"/>
+  </joint>
+  <link name="left_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0426 0.0 -0.1037"/>
+      <geometry>
+        <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0426 0.0 -0.1037"/>
+      <geometry>
+        <mesh filename="meshes/left_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <joint name="palm_right_inner_joint" type="revolute">
+    <origin rpy="0 0.43 0" xyz="0.0075 0.0 0.0715"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="-0.86" upper="0" velocity="0.2"/>
+    <parent link="palm"/>
+    <child link="right_inner"/>
+  </joint>
+  <link name="right_inner">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0075 0.0 -0.0715"/>
+      <geometry>
+        <mesh filename="meshes/right_inner.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.0075 0.0 -0.0715"/>
+      <geometry>
+        <mesh filename="meshes/right_inner.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+  
+  <joint name="palm_right_outer_joint" type="revolute">
+    <origin rpy="0 0.43 0" xyz="0.017 0.0 0.055"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="-0.86" upper="0" velocity="0.2"/>
+    <parent link="palm"/>
+    <child link="right_outer"/>
+  </joint>
+  <link name="right_outer">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.017 0.0 -0.055"/>
+      <geometry>
+        <mesh filename="meshes/right_outer.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="White">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.017 0.0 -0.055"/>
+      <geometry>
+        <mesh filename="meshes/right_outer.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+
+  <joint name="right_finger_joint" type="revolute">
+    <origin rpy="0 -0.43 0" xyz="0.025592 0.0 0.048677"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20" lower="0" upper="0.86" velocity="0.2"/>
+    <parent link="right_outer"/>
+    <child link="right_finger"/>
+  </joint>
+  <link name="right_finger">
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0426 0.0 -0.1037"/>
+      <geometry>
+        <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.0426 0.0 -0.1037"/>
+      <geometry>
+        <mesh filename="meshes/right_finger.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+    </inertial>
+  </link>
+</robot>

@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<robot
+  name="wsg_32_description">
+  <link
+    name="hand_link">
+    <inertial>
+      <origin
+        xyz="-6.56023314178677E-06 -0.00175309107853196 0.0266239521718502"
+        rpy="0 0 0" />
+      <mass
+        value="0.19187770361295" />
+      <inertia
+        ixx="0.000259095961095666"
+        ixy="-4.42589635811335E-08"
+        ixz="-8.19503266406055E-09"
+        iyy="6.70924748330843E-05"
+        iyz="-6.65748470338111E-06"
+        izz="0.000219527960705521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hand_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/hand_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wsg_50_gripper_base_link_gripper_left">
+    <inertial>
+      <origin
+        xyz="-2.850603053553E-05 -0.00191114285188175 0.00382933445364996"
+        rpy="0 0 0" />
+      <mass
+        value="3.41920163633724E-06" />
+      <inertia
+        ixx="3.06504383705634E-10"
+        ixy="5.74222476890191E-11"
+        ixz="-2.40533503848462E-10"
+        iyy="4.90275789305826E-10"
+        iyz="6.8945176052368E-11"
+        izz="2.18298925049827E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.00725 0 0.0004"
+        rpy="0 1.57079 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/left_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wsg_50_gripper_base_joint_gripper_left"
+    type="prismatic">
+    <origin
+      xyz="-0.0003903 -0.0078 0.069014"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="hand_link" />
+    <child
+      link="wsg_50_gripper_base_link_gripper_left" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.028"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="wsg_50_gripper_base_link_gripper_right">
+    <inertial>
+      <origin
+        xyz="-2.72000777333109E-05 -0.00460993992652343 -0.00191114282807962"
+        rpy="-1.57079 3.14159 -1.57079" />
+      <mass
+        value="3.41920163633724E-06" />
+      <inertia
+        ixx="3.06504383705634E-10"
+        ixy="2.40533503848236E-10"
+        ixz="5.74222476899625E-11"
+        iyy="2.18298925050368E-10"
+        iyz="-6.89451760534347E-11"
+        izz="4.90275789305286E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.00725 0 0.0004"
+        rpy="-1.57079 3.14159  -1.57079" />
+      <geometry>
+        <mesh
+          filename="meshes/right_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/right_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wsg_50_gripper_base_joint_gripper_right"
+    type="prismatic">
+    <origin
+      xyz="-0.0003903 0.0078 0.069012"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="hand_link" />
+    <child
+      link="wsg_50_gripper_base_link_gripper_right" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0.028"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+  <!-- add fingers to actuated segments -->
+
+  <link
+    name="right_universal_finger_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="3.06504383705634E-10"
+        ixy="2.40533503848236E-10"
+        ixz="5.74222476899625E-11"
+        iyy="2.18298925050368E-10"
+        iyz="-6.89451760534347E-11"
+        izz="4.90275789305286E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.01 0 0.00"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/universal_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/universal_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_universal_finger_joint"
+    type="fixed">
+    <origin
+      xyz="0.00755 0.0 0.0049"
+      rpy="0 -1.57079 -1.57079" />
+    <parent
+      link="wsg_50_gripper_base_link_gripper_right" />
+    <child
+      link="right_universal_finger_link" />
+  </joint>
+
+  <link
+    name="left_universal_finger_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="3.06504383705634E-10"
+        ixy="2.40533503848236E-10"
+        ixz="5.74222476899625E-11"
+        iyy="2.18298925050368E-10"
+        iyz="-6.89451760534347E-11"
+        izz="4.90275789305286E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.00 0 0.00"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/universal_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/universal_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_universal_finger_joint"
+    type="fixed">
+    <origin
+      xyz="0.00755 -0.0045 0"
+      rpy="0 3.14159 -1.57079" />
+    <parent
+      link="wsg_50_gripper_base_link_gripper_left" />
+    <child
+      link="left_universal_finger_link" />
+  </joint>
+
+
+</robot>

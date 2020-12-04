@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# VS Code
+.vscode/
+
+# DS_Store
+.DS_Store
+
+# virtualenv
+.python-version
+
+# project specific
+.tmp*
+figures/
+exp/
+data/
+scripts
+vis/
