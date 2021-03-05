@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- source: https://github.com/RethinkRobotics/intera_common/tree/master/intera_tools_description/urdf/electric_gripper -->
 <robot name="sawyer_2f">
   <link name="base_link">
     <visual>

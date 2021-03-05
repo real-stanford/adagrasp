@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- source: https://github.com/nalt/wsg50-ros-pkg/tree/master/wsg_50_simulation -->
 <robot name="wsg_50" 
 
        xmlns:xi="http://www.w3.org/2001/XInclude"

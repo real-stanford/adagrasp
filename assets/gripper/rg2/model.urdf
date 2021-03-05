@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- =================================================================================== -->
 <!-- |    Author: Beichun Qi                                                           | -->
+<!-- |    bq2139@columbia.edu                                                          | -->
+<!-- |    urdf for the RG2 gripper.                                                    | -->
+<!-- |    meshes extracted from https://github.com/sharathrjtr/ur10_rg2_ros/blob/master/robot_descriptions/meshes/rg2_gripper/dae_rg2_.dae |-->
 <!-- =================================================================================== -->
 <robot name="rg2">
   <link name="palm">
