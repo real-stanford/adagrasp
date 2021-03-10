@@ -9,7 +9,7 @@ Columbia University
 <br>
 [ICRA 2021](https://www.ieee-icra.org/)
 
-### [Project Page](https://adagrasp.cs.columbia.edu/) | [Video](https://youtu.be/MUawdWnQDyQ) | [arXiv](https://arxiv.org/abs/2011.14206)
+### [Project Page](https://adagrasp.cs.columbia.edu/) | [Video](https://youtu.be/kknTYTbORfs) | [arXiv](https://arxiv.org/abs/2011.14206)
 
 ## Overview
 This repo contains the PyTorch implementation for paper "AdaGrasp:  Learning  an  Adaptive  Gripper-Aware  Grasping  Policy".
