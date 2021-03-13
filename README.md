@@ -170,6 +170,16 @@ python train.py --exp adagrasp_obstacle --model_type adagrasp --num_cam 1 --data
 ```
 To train models that can handle random number of cameras, use `None` for `[NUM_CAM]`, which will randomly select from {1, 2, 3, 4} as the number of cameras.
 
+## BibTeX
+```
+@inproceedings{xu2021adagrasp,
+	title={AdaGrasp:  Learning  an  Adaptive  Gripper-Aware  Grasping  Policy},
+	author={Xu, Zhenjia and Qi, Beichun and Agrawal, Shubham and Song, Shuran},
+	booktitle={Proceedings of the IEEE International Conference on Robotics and Automation},
+	year={2021}
+}
+```
+
 ## License
 
 This repository is released under the MIT license. See [LICENSE](LICENSE) for additional details.
